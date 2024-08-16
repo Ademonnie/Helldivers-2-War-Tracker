@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
 
 html {
   background-color: #1F1F23;
+}
+
+h1 {
+  font-family: 'Jockey One';
 }
 
 h3,

@@ -11,8 +11,8 @@
     percentage: Number
   })
 
-  const terminid = ref(false)
-  const automaton = ref(false)
+  const terminid = ref<Boolean>(false)
+  const automaton = ref<Boolean>(false)
 
   terminid.value = props.faction === 'Terminids'
   automaton.value = props.faction === 'Automatons'
@@ -22,6 +22,8 @@
 <style scoped>
 
   .progress-bar {
+    --highlight-color: #F1F1F1;
+
     box-sizing: border-box;
     height: 30px;
     width: 100%;
@@ -40,7 +42,8 @@
   .seaf-progress {
     box-sizing: border-box;
     border: 2px solid var(--highlight-color);
-    background-color: #1D9CFC;
+    /* background-color: #1D9CFC; */
+    background-color: #131313;
     height: 100%;
   }
 
