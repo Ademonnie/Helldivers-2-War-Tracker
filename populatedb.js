@@ -2,8 +2,14 @@ import Database from 'better-sqlite3'
 
 const db = new Database('./.data/dbfile.sqlite3')
 
-const getData = () => {
+const getPlanetData = () => {
   const response = fetch('https://helldiverstrainingmanual.com/api/v1/war/campaign')
+
+  return response
+}
+
+const getMo = () => {
+  const response = fetch('https://helldiverstrainingmanual.com/api/v1/war/major-orders')
 
   return response
 }
@@ -11,7 +17,7 @@ const getData = () => {
 const cleanTable = db.prepare('DELETE FROM planets')
 const insertData = db.prepare('INSERT INTO planets (planetIndex, name, faction, players, health, maxHealth, percentage, defense, majorOrder, biome) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
 
-getData()
+getPlanetData()
   .then((test) => {
     cleanTable.run()
     return test.json()
@@ -25,4 +31,12 @@ getData()
     })
     db.close()
   })
+
+// getMo()
+//   .then((res) => {
+//     return res.json()
+//   }).then(data => {
+//     console.log(data)
+//     console.log(data[0]?.setting.tasks)
+//   })
 

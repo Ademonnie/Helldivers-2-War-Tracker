@@ -13,13 +13,13 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps({
-    planet: Object
-  })
+  const props = defineProps<{
+    planet: Planet
+  }>()
 
   const terminid = ref<Boolean>(false)
   const automaton = ref<Boolean>(false)
-  const biome = await JSON.parse(props.planet?.biome)
+  const biome :Biome = await JSON.parse(props.planet?.biome)
 
   terminid.value = props.planet?.faction === 'Terminids'
   automaton.value = props.planet?.faction === 'Automatons'
@@ -31,8 +31,8 @@
     --highlight-color: #F1F1F1;
 
     position: relative;
-    width: 30%;
     min-width: 350px;
+    max-width: 600px;
     overflow: hidden;
     background-color: #131313;
     border: 1px solid rgb(var(--highlight-color));

@@ -22,4 +22,14 @@
     font-size: 1.9rem;
   }
 
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 4.5rem
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
 </style>

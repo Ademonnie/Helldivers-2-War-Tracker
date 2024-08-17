@@ -1,9 +1,8 @@
 <template>
   <div>
     <MainTitle class="title-container"></MainTitle>
-    <div v-for="planet in planets" >
-      <PlanetCard class="planet-card" :planet="planet"></PlanetCard>
-    </div>
+    <MobileCardContainer class="mobile-card-container" :planets="planets"/>
+    <DesktopCardContainer class="desktop-card-container" :planets="planets"/>
   </div>
 </template>
 
@@ -21,8 +20,20 @@ planets.value = await $fetch("/api/getPlanets")
   margin-bottom: 50px;
 }
 
-.planet-card {
-  margin: 0px auto 30px;
+.mobile-card-container {
+  display: none;
+
+  @media (max-width: 800px) {
+    display: flex;
+  }
+}
+
+.desktop-card-container {
+  display: none;
+
+  @media (min-width: 800px) {
+    display: flex;
+  }
 }
 
 </style>
