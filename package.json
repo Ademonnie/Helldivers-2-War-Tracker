@@ -8,7 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "populatedb": "node populatedb.js"
+    "get-planets": "node populateActivePlanets.js",
+    "get-mo": "node populateMo.js"
   },
   "dependencies": {
     "nuxt": "^3.12.4",

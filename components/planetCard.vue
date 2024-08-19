@@ -3,8 +3,9 @@
     <div class="planet-name">
       <h3>{{ planet?.name || "Unknown planet" }}</h3>
     </div>
-    <AttackProgressBar :faction="planet?.faction" :percentage="planet?.percentage || 0"></AttackProgressBar>
-    <p>{{ planet?.percentage || 0 }}% LIBERATED</p>
+    <DefenseProgressBar v-if="isDefense" class="defense-progress-bar" :faction="planet?.faction" :percentage="planet?.percentage || 0" :expireDateTime="planet?.expireDateTime"/>
+    <AttackProgressBar v-else class="attack-progress-bar" :faction="planet?.faction" :percentage="planet?.percentage || 0"></AttackProgressBar>
+    <p><strong>{{ Math.trunc(planet?.percentage) || 0 }}%</strong> {{ isDefense ? 'DEFENDED' : 'LIBERATED'}}</p>
     <div class="planet-info">
       <p class="biome">Biome: {{ biome?.slug || 'Unknown'}}</p>
       <p class="players">{{ planet?.players || 0 }} active Helldivers</p>
@@ -19,6 +20,7 @@
 
   const terminid = ref<Boolean>(false)
   const automaton = ref<Boolean>(false)
+  const isDefense :boolean = props.planet?.defense === 1 
   const biome :Biome = await JSON.parse(props.planet?.biome)
 
   terminid.value = props.planet?.faction === 'Terminids'
@@ -28,7 +30,7 @@
 <style scoped>
 
   .planet-card-container {
-    --highlight-color: #F1F1F1;
+    --highlight-color: 241, 241, 241;
 
     position: relative;
     min-width: 350px;
@@ -38,6 +40,14 @@
     border: 1px solid rgb(var(--highlight-color));
     color: rgb(var(--highlight-color));
     transition: all 300ms ease-in-out;
+  }
+
+  .planet-card-container.terminid {
+    --highlight-color: 251, 185, 0;
+  }
+
+  .planet-card-container.automaton {
+    --highlight-color: 253, 98, 100;
   }
 
   .planet-card-container:hover {
@@ -54,7 +64,7 @@
     background: linear-gradient(
       120deg,
       transparent,
-      rgba(200, 200, 200, 0.2),
+      rgba(200, 200, 200, 0.15),
       transparent
     );
   }
@@ -64,12 +74,12 @@
     left: 100%;
   }
 
-  .planet-card-container.terminid {
-    --highlight-color: 251, 185, 0;
+  .attack-progress-bar {
+    margin: 0 10px 30px;
   }
 
-  .planet-card-container.automaton {
-    --highlight-color: 253, 98, 100;
+  .defense-progress-bar {
+    margin: 0 10px;
   }
 
   .planet-name {

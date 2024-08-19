@@ -37,6 +37,10 @@ const setSelectedFaction = (faction: string) => {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (min-width: 801px) {
+      display: none;
+    }
   }
 
   .faction-selector {

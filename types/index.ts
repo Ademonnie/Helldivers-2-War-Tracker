@@ -10,7 +10,9 @@ declare global {
     maxHealth: number,
     percentage: number,
     majorOrder: number,
-    biome: string
+    defense: number,
+    biome: string,
+    expireDateTime: number,
   }
 
   interface Biome {

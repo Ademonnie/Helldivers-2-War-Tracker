@@ -22,28 +22,27 @@
 <style scoped>
 
   .progress-bar {
-    --highlight-color: #F1F1F1;
-
+    --highlight-color: 241, 241, 241;
     box-sizing: border-box;
     height: 30px;
-    width: 100%;
-    border: 4px solid #1F1F23;
-    background-color: var(--highlight-color);
+    width: auto;
+    border: 4px solid rgb(19, 19, 19);
+    background-color: rgb(var(--highlight-color));
   }
 
   .progress-bar.terminid {
-    --highlight-color: #FBB900
+    --highlight-color: 251, 185, 0;
   }
 
   .progress-bar.automaton {
-    --highlight-color: #FD6264
+    --highlight-color: 253, 98, 100;
   }
 
   .seaf-progress {
     box-sizing: border-box;
-    border: 2px solid var(--highlight-color);
+    border: 2px solid rgb(var(--highlight-color));
     /* background-color: #1D9CFC; */
-    background-color: #131313;
+    background-color: rgb(19, 19, 19);
     height: 100%;
   }
 

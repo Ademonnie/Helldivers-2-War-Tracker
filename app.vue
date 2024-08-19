@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
   
-const planets = ref([])
+const planets = ref<Planet[]>([])
 
 planets.value = await $fetch("/api/getPlanets")
 
@@ -18,22 +18,6 @@ planets.value = await $fetch("/api/getPlanets")
 
 .title-container {
   margin-bottom: 50px;
-}
-
-.mobile-card-container {
-  display: none;
-
-  @media (max-width: 800px) {
-    display: flex;
-  }
-}
-
-.desktop-card-container {
-  display: none;
-
-  @media (min-width: 800px) {
-    display: flex;
-  }
 }
 
 </style>

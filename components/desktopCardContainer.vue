@@ -26,9 +26,14 @@ automatonPlanets.value = props.planets?.filter(p => p.faction === 'Automatons') 
 </script>
 
 <style scoped>
+
   .desktop-card-container {
     display: flex;
     justify-content: center;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 
   .card-list {
