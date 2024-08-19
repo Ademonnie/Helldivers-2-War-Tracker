@@ -12,9 +12,9 @@ const cleanTable = db.prepare('DELETE FROM planets')
 const insertData = db.prepare('INSERT INTO planets (planetIndex, name, faction, players, health, maxHealth, percentage, defense, majorOrder, biome, expireDateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
 
 getPlanetData()
-  .then((test) => {
+  .then((res) => {
     cleanTable.run()
-    return test.json()
+    return res.json()
   }).then(data => {
     data.forEach(planet => {
       const biome = JSON.stringify(planet.biome)

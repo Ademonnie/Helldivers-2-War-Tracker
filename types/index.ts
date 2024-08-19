@@ -19,4 +19,23 @@ declare global {
     slug: string,
     description: string
   }
+
+  interface Order {
+    id32: number,
+    expiresIn: number,
+    brief: string,
+    description: string,
+    tasks: string
+  }
+
+  interface Task {
+    type: number,
+    values: number[],
+    valueTypes: number[]
+  }
+
+  enum taskTypes {
+    controlPlanet = 11,
+    defendPlanets = 12
+  }
 }

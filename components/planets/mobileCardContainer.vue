@@ -12,6 +12,7 @@
 </template>
 
 <script setup lang="ts">
+import PlanetCard from './planetCard.vue';
 
 const props = defineProps<{
   planets: Planet[]

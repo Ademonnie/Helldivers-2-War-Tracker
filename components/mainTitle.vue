@@ -1,9 +1,17 @@
 <template>
   <div>
     <h1>Helldivers 2</h1>
-    <h2>Glactic war status</h2>
+    <h2>{{ title }}</h2>
   </div>
 </template>
+
+<script setup lang="ts">
+
+  const props = defineProps<{
+    title: string
+  }>()
+
+</script>
 
 <style scoped>
 

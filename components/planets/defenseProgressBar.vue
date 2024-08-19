@@ -4,7 +4,9 @@
       <div class="seaf-progress" :style="{width: percentage + '%'}"></div>
     </div>
     <div class="defense-bar" :class="{terminid: terminid, automaton: automaton}">
-      <div class="enemy-progress" :style="{width: getEnemyProgress(expireDateTime ? expireDateTime : 0) + '%'}"></div>
+      <ClientOnly>
+        <div class="enemy-progress" :style="{width: enemyProgress + '%'}"></div>
+      </ClientOnly>
     </div>
   </div>
 </template>
@@ -19,16 +21,15 @@
 
   const terminid = ref<Boolean>(false)
   const automaton = ref<Boolean>(false)
-  
-  const getEnemyProgress = (date: number) => {
+
+  const enemyProgress = computed<number>(() => {
+    const date = props.expireDateTime || 0
     const startDate = new Date(date * 1000 - (24 * 60 * 60 * 1000)).getTime()
     const currentDate = new Date().getTime() - startDate
     const endDate = date * 1000 - startDate
 
     return (100 * currentDate) / endDate
-  }
-
-
+  })
   
   terminid.value = props.faction === 'Terminids'
   automaton.value = props.faction === 'Automatons'

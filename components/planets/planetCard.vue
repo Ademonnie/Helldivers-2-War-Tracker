@@ -14,6 +14,9 @@
 </template>
 
 <script setup lang="ts">
+  import AttackProgressBar from './attackProgressBar.vue';
+  import DefenseProgressBar from './defenseProgressBar.vue';
+
   const props = defineProps<{
     planet: Planet
   }>()

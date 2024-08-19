@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "init-db": "node initDb.js",
     "get-planets": "node populateActivePlanets.js",
     "get-mo": "node populateMo.js"
   },
