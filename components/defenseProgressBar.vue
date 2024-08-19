@@ -25,8 +25,6 @@
     const currentDate = new Date().getTime() - startDate
     const endDate = date * 1000 - startDate
 
-    console.log((100 * currentDate) / endDate)
-
     return (100 * currentDate) / endDate
   }
 
