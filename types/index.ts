@@ -15,6 +15,14 @@ declare global {
     expireDateTime: number,
   }
 
+  interface InactivePlanet {
+    id: number,
+    name: string,
+    biome: string,
+    environmentals: string,
+    owner: string
+  }
+
   interface Biome {
     slug: string,
     description: string
@@ -25,7 +33,9 @@ declare global {
     expiresIn: number,
     brief: string,
     description: string,
-    tasks: string
+    tasks: string,
+    progress: number[],
+    isActive: number
   }
 
   interface Task {

@@ -8,8 +8,8 @@ const getPlanetData = () => {
   return response
 }
 
-const cleanTable = db.prepare('DELETE FROM planets')
-const insertData = db.prepare('INSERT INTO planets (planetIndex, name, faction, players, health, maxHealth, percentage, defense, majorOrder, biome, expireDateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
+const cleanTable = db.prepare('DELETE FROM activePlanets')
+const insertData = db.prepare('INSERT INTO activePlanets (planetIndex, name, faction, players, health, maxHealth, percentage, defense, majorOrder, biome, expireDateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')
 
 getPlanetData()
   .then((res) => {

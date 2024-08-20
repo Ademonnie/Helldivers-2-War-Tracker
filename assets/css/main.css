@@ -11,12 +11,17 @@ h1 {
 
 h3,
 h2,
-p {
+p,
+a {
   font-family: 'inconsolata';
   color: #F1F1F1;
 }
 
 h3 {
+  font-size: 1.3rem;
+}
+
+a {
   font-size: 1.3rem;
 }
 

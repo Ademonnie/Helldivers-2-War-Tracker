@@ -1,7 +1,11 @@
 <template>
   <div>
+    <div class="nav-container">
+      <NuxtLink class="nav-link" to="/">Back</NuxtLink>
+    </div>
     <MainTitle class="title-container" title="Major Order"/>
-    <MajorOrderContainer v-for="order in orders" :order="order"></MajorOrderContainer>
+    <MajorOrderContainer v-if="orders.length > 0" v-for="order in orders" :order="order"></MajorOrderContainer>
+    <p v-else>No active Major Order</p>
   </div>
 </template>
 
@@ -16,6 +20,12 @@ orders.value = await $fetch('/api/getMo')
 </script>
 
 <style scoped>
+
+.nav-container {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
 
 .title-container {
   margin-bottom: 50px;

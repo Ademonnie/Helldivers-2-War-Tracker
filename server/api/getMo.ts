@@ -2,7 +2,11 @@ export default defineEventHandler(async (event) => {
   
   const db = useDatabase('db')
 
-  const orders = await db.sql`SELECT * FROM orders`
+  const { rows }: { rows: Order[] } = await db.sql`SELECT * FROM orders WHERE isActive = 1`
 
-  return orders.rows
+  rows?.map(async row => {
+    row.progress = await JSON.parse(row.progress || '')
+  })
+
+  return rows
 })

@@ -14,7 +14,7 @@ const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
 
 `)
 
-const initPlanets = db.prepare(`CREATE TABLE IF NOT EXISTS planets
+const initActivePlanets = db.prepare(`CREATE TABLE IF NOT EXISTS activePlanets
   
   (
     planetIndex INTEGER PRIMARY KEY,
@@ -27,10 +27,23 @@ const initPlanets = db.prepare(`CREATE TABLE IF NOT EXISTS planets
     defense INTEGER,
     majorOrder INTEGER,
     biome STRING,
-    expireDateTime NUMBER,
+    expireDateTime NUMBER
   )
   
 `)
 
+const initPlanets = db.prepare(`CREATE TABLE IF NOT EXISTS planets
+  
+  (
+    id INTEGER PRIMARY KEY,
+    name STRING,
+    biome STRING,
+    environmentals STRING,
+    owner STRING
+  )
+
+`)
+
 initOrders.run()
+initActivePlanets.run()
 initPlanets.run()

@@ -36,7 +36,7 @@
     --highlight-color: 241, 241, 241;
 
     position: relative;
-    min-width: 350px;
+    min-width: 330px;
     max-width: 600px;
     overflow: hidden;
     background-color: #131313;
