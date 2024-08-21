@@ -1,5 +1,3 @@
-import type { ConcreteComponent } from "vue"
-
 export default function (type: number): {description: string, component: string } {
   
   let data = {
@@ -8,6 +6,10 @@ export default function (type: number): {description: string, component: string 
   }
   
   switch (type) {
+    case 3:
+      data.description = 'Kill the following amount of enemies :'
+      data.component = 'killTask'
+      break
     case 11:
       data.description = 'The following planets must be under Super Earth control :'
       data.component = 'LiberateTask'
@@ -15,6 +17,11 @@ export default function (type: number): {description: string, component: string 
     case 12:
       data.description = 'Succesfully defend the follwing number of planets :'
       data.component = 'DefenseTask'
+      break
+    case 13:
+      data.description = 'Hold control of the following planet :',
+      data.component = 'LiberateTask'
+      break
   }
 
   return data

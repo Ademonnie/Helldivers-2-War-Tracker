@@ -5,7 +5,7 @@
     <p v-if="order.brief !== order.description" class="order-context">{{ order.description }}</p>
     <div class="task-list">
       <h3><strong>Tasks :</strong></h3>
-      <TaskContainer class="task-container" v-for="(task, index) in tasks" :task="task" :completed="taskStatus[index]"></TaskContainer>
+      <TaskContainer class="task-container" v-for="(task, index) in tasks" :task="task" :completed="taskStatus[index]" :progress="order.progress[index]"></TaskContainer>
     </div>
   </div>
 </template>
@@ -22,7 +22,7 @@ const taskStatus = ref<boolean[]>([])
 
 tasks.value = JSON.parse(props.order.tasks)
 tasks.value.forEach((task, index) => {
-  taskStatus.value[index] = props.order.progress[index] === 1
+  taskStatus.value[index] = getTaskStatus(task, props.order.progress[index]) 
 })
 </script>
 

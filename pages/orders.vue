@@ -5,7 +5,7 @@
     </div>
     <MainTitle class="title-container" title="Major Order"/>
     <MajorOrderContainer v-if="orders.length > 0" v-for="order in orders" :order="order"></MajorOrderContainer>
-    <p v-else>No active Major Order</p>
+    <h2 v-else class="no-order-message">No active Major Order</h2>
   </div>
 </template>
 
@@ -29,6 +29,10 @@ orders.value = await $fetch('/api/getMo')
 
 .title-container {
   margin-bottom: 50px;
+}
+
+.no-order-message {
+  text-align: center;
 }
 
 </style>

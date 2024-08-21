@@ -4,7 +4,7 @@
       <div class="status" :class="{completed: completed}"/>
       <p>{{ taskData?.description }}</p>
     </div>
-    <component :is="taskData?.component" :task="task"/>
+    <component :is="taskData?.component" :task="task" :progress="progress"/>
   </div>
 </template>
 
@@ -13,7 +13,8 @@ import getTaskData from '~/composables/getTaskData'
 
 const props = defineProps<{
   task: Task,
-  completed: boolean
+  completed: boolean,
+  progress: number
 }>()
 
 const taskData = ref<{

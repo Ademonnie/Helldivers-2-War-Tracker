@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
 
   const { rows }: { rows: Order[] } = await db.sql`SELECT * FROM orders WHERE isActive = 1`
 
-  rows?.map(async row => {
+  rows.map(async row => {
     row.progress = await JSON.parse(row.progress || '')
   })
 

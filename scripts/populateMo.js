@@ -26,6 +26,11 @@ getMo()
   .then((res) => {
     return res.json()
   }).then(data => {
+    if (data.length === 0) {
+      updateOldOrders.run({
+        id32: 0
+      })
+    }
     data.forEach(order => {
       const brief = order.setting.overrideBrief 
       const description = order.setting.taskDescription
