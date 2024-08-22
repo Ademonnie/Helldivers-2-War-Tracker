@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="nav-container">
-      <NuxtLink to="/orders">Major Order</NuxtLink>
-    </div>
-    <MainTitle class="title-container" title="Galactic war status"></MainTitle>
+    <Header title="Galactic war status" :routes="routes"></Header>
     <MobileCardContainer :planets="planets"></MobileCardContainer>
     <DesktopCardContainer :planets="planets"></DesktopCardContainer>
   </div>
@@ -15,6 +12,12 @@ import MobileCardContainer from '~/components/planets/mobileCardContainer.vue';
 
   
 const planets = ref<Planet[]>([])
+const routes = [
+  {
+    name: 'Major Orders',
+    to: '/orders'
+  }
+]
 
 planets.value = await $fetch('/api/getActivePlanets')
 
@@ -28,8 +31,17 @@ planets.value = await $fetch('/api/getActivePlanets')
   right: 50px;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #1F1F23;
+  z-index: 1;
+}
+
 .title-container {
-  margin-bottom: 50px;
+
+  padding-bottom: 50px;
+  
 }
 
 </style>

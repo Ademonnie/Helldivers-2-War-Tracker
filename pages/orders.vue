@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="nav-container">
-      <NuxtLink class="nav-link" to="/">Back</NuxtLink>
-    </div>
-    <MainTitle class="title-container" title="Major Order"/>
+    <Header title="Major Order" :routes="routes"></Header>
     <MajorOrderContainer v-if="orders.length > 0" v-for="order in orders" :order="order"></MajorOrderContainer>
     <h2 v-else class="no-order-message">No active Major Order</h2>
   </div>
@@ -12,6 +9,12 @@
 <script setup lang="ts">
 import MajorOrderContainer from '~/components/orders/MajorOrderContainer.vue';
 
+const routes = [
+  {
+    name: 'War Status',
+    to: '/'
+  }
+]
 
 const orders = ref<Order[]>([])
 
