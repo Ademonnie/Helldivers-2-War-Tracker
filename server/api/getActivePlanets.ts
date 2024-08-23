@@ -2,7 +2,9 @@ export default defineEventHandler(async (event) => {
    
   const db = useDatabase('db')
 
-  const planets = await db.sql`SELECT * FROM activePlanets`
+  const { rows }: { rows: Planet[] } = await db.sql`SELECT * FROM activePlanets`
 
-  return planets.rows 
+  rows.sort((a, b) => b.percentage - a.percentage)
+
+  return rows
 })
