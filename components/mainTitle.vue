@@ -16,8 +16,20 @@
 
 <style scoped>
 
+  .container {
+    padding: 5px 30px;
+    width: 100%;
+    box-sizing: border-box;
+
+    text-align: center;
+    color: #F1F1F1;
+    text-wrap: nowrap;
+
+    transition: width 300ms ease-in-out ;
+  }
+
   h1 {
-    font-size: 6rem;
+    font-size: 4.9rem;
     margin: 0;
 
     transition: font-size 30ms ease-in-out;
@@ -25,24 +37,18 @@
 
   h2 {
     font-size: 1.9rem;
-  }
-
-  .container {
-    padding: 5px 30px;
-    box-sizing: border-box;
-    text-align: center;
-    color: #F1F1F1;
-    width: 100%;
-    text-wrap: nowrap;
-    transition: width 300ms ease-in-out ;
+    margin: 0
   }
 
   .container.pinned {
     width: 0;
+    
   }
 
   .container.pinned > h1 {
     font-size: 4rem;
+    line-height: 4rem;
+    
   }
 
   .container.pinned > h2 {
@@ -52,12 +58,13 @@
   @media (max-width: 800px) {
 
     .container {
-      padding: 5px 10px;
       width: 0;
+      padding: 5px 10px;
     }
-
+    
     h1 {
-      font-size: 3rem
+      font-size: 3rem;
+      line-height: 3rem;
     }
 
     h2 {
@@ -66,6 +73,7 @@
 
     .container.pinned > h1 {
       font-size: 3rem;
+      line-height: 3rem;
     }
 
     .container.pinned > h2 {

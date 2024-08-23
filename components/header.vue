@@ -33,18 +33,44 @@
     top: -1px;
     z-index: 1;
     background-color: #1F1F23;
+    padding-bottom: 20px;
+    
+    @media (max-width: 800px) {
+      padding-bottom: 5px;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 2fr minmax(0, 1fr);
+    }
   }
 
+
   .header-container.pinned {
-    box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.8);
+    padding-bottom: 5px;
   }
+
+  .title-container {
+    grid-column: 2 / 3;
+
+    @media (max-width: 800px ) {
+      grid-column: 1 / 3;
+    }
+  }
+
+  
 
   .nav-container {
     position: absolute;
-    right: 30px;
-    top: 0;
+    right: 10%;
     bottom: 0;
-    margin: auto 0;
+    top: 0;
+    margin: auto auto;
+
+    @media (max-width: 800px) {
+      right: 30%;
+      grid-column: 3 / 4;
+
+    }
   }
 
 </style>

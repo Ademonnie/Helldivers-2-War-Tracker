@@ -9,7 +9,8 @@ const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
     expiresIn INTEGER,
     brief STRING,
     description STRING,
-    tasks STRING
+    tasks STRING,
+    progress STRING
   )
 
 `)
@@ -23,7 +24,7 @@ const initActivePlanets = db.prepare(`CREATE TABLE IF NOT EXISTS activePlanets
     players INTEGER,
     health INTEGER,
     maxHealth INTEGER,
-    precentage NUMBER,
+    percentage NUMBER,
     defense INTEGER,
     majorOrder INTEGER,
     biome STRING,

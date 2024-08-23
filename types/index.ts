@@ -1,10 +1,17 @@
 export { }
 
+const planeName = {
+  TERMINID: 'Terminids',
+  AUTOMATON: 'Automatons'
+} as const
+
+type ValueOf<Obj> = Obj[keyof Obj];
+
 declare global {
   interface Planet {
     planetIndex: number,
-    name: string,
-    faction: string,
+    name:  string,
+    faction: ValueOf<typeof planeName>,
     players: number,
     health: number,
     maxHealth: number,
