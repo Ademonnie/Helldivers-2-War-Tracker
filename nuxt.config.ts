@@ -16,6 +16,9 @@ export default defineNuxtConfig({
       database: true,
       tasks: true
     },
+    scheduledTasks: {
+      '* * * * *': ['db:init']
+    },
     database:{
       db: {
         connector: 'sqlite',

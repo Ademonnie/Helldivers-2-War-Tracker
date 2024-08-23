@@ -1,7 +1,7 @@
 export default defineTask({
     meta: {
         name: 'db:init',
-
+        description: 'Initialise Database'
     },
     run() {
 
