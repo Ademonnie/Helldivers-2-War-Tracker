@@ -16,9 +16,7 @@
   },
   "dependencies": {
     "nuxt": "^3.12.4",
-    "vue": "latest"
-  },
-  "devDependencies": {
+    "vue": "latest",
     "better-sqlite3": "^9.6.0"
   }
 }
