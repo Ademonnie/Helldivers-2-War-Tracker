@@ -12,6 +12,7 @@ export default defineTask({
         (
             id32 INTEGER PRIMARY KEY,
             expiresIn INTEGER,
+            isActive INTEGER,
             brief STRING,
             description STRING,
             tasks STRING,
