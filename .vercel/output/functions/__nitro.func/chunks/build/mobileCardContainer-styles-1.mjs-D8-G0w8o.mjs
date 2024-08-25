@@ -1,4 +1,0 @@
-const mobileCardContainer_vue_vue_type_style_index_0_scoped_07dbdef3_lang = '.mobile-card-container[data-v-07dbdef3]{align-items:center;display:flex;flex-direction:column;@media (min-width:801px){display:none}}.faction-selector[data-v-07dbdef3]{display:flex;justify-content:center;position:relative}.faction-selector[data-v-07dbdef3]:after{background-color:#f1f1f1;bottom:20px;content:"";height:1px;left:5px;position:absolute;top:auto;transition:all .25s ease-in-out;width:130px}.faction-selector.terminids[data-v-07dbdef3]:after{left:145px}.faction-selector>p[data-v-07dbdef3]{margin:20px 10px;padding-bottom:10px}p[data-v-07dbdef3]{cursor:pointer;font-size:1.4rem;font-weight:700;text-align:center;text-transform:uppercase;width:120px}.planet-card[data-v-07dbdef3]{margin-bottom:20px}';
-
-export { mobileCardContainer_vue_vue_type_style_index_0_scoped_07dbdef3_lang as m };
-//# sourceMappingURL=mobileCardContainer-styles-1.mjs-D8-G0w8o.mjs.map

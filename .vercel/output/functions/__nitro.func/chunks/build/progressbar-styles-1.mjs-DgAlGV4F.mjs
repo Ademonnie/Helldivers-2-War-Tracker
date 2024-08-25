@@ -1,4 +1,0 @@
-const progressbar_vue_vue_type_style_index_0_scoped_29cc5df3_lang = ".bar[data-v-29cc5df3]{--highlight-color:241,241,241;background-color:rgb(var(--highlight-color));border:4px solid #131313;box-sizing:border-box;height:30px;width:auto}.bar.terminid[data-v-29cc5df3]{--highlight-color:251,185,0}.bar.automaton[data-v-29cc5df3]{--highlight-color:253,98,100}.progress[data-v-29cc5df3]{background-color:#131313;border:2px solid rgb(var(--highlight-color));box-sizing:border-box;height:100%}";
-
-export { progressbar_vue_vue_type_style_index_0_scoped_29cc5df3_lang as p };
-//# sourceMappingURL=progressbar-styles-1.mjs-DgAlGV4F.mjs.map

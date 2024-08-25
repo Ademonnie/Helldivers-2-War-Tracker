@@ -50,7 +50,7 @@ export default defineNitroPlugin(() => {
   initActivePlanets.run()
   initPlanets.run()
 
-  } catch {
-    console.error("Failed to initialise database")
+  } catch (e) {
+    console.error(e, " Failed to initialise database")
   }
 })
