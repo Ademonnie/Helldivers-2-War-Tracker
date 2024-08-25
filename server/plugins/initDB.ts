@@ -1,5 +1,6 @@
 export default defineNitroPlugin(() => {
 
+  try {
   const db = useDatabase('db')
   
   const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
@@ -48,4 +49,8 @@ export default defineNitroPlugin(() => {
   initOrders.run()
   initActivePlanets.run()
   initPlanets.run()
+
+  } catch {
+    console.error("Failed to initialise database")
+  }
 })
