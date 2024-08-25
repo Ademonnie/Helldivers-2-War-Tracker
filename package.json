@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "NITRO_PRESET=vercel nuxt build",
+    "build": "nuxt build",
     "start": "nuxt start",
     "dev": "nuxt dev",
     "generate": "nuxt generate",

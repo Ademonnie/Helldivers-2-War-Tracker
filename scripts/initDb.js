@@ -7,6 +7,7 @@ const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
   (
     id32 INTEGER PRIMARY KEY,
     expiresIn INTEGER,
+    isActive INTEGER,
     brief STRING,
     description STRING,
     tasks STRING,

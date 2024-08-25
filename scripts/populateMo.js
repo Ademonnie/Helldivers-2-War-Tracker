@@ -8,20 +8,12 @@ const getMo = () => {
   return response
 }
 
-const insertData = db.prepare(`
-  INSERT INTO orders 
-    (id32, expiresIn, brief, description, tasks, progress, isActive)
-  VALUES 
-    ($id32, $expiresIn, $brief, $description, $tasks, $progress, $isActive) 
-  ON CONFLICT(id32) DO UPDATE SET 
-    expiresIn = $expiresIn,
-    progress = $progress
-    `)
+const insertData = db.prepare(`INSERT INTO orders (id32, expiresIn, brief, description, tasks, progress, isActive) VALUES ($id32, $expiresIn, $brief, $description, $tasks, $progress, $isActive) ON CONFLICT(id32) DO UPDATE SET expiresIn = $expiresIn, progress = $progress`)
 
 const updateOldOrders = db.prepare(`
     UPDATE orders SET isActive = 0 WHERE id32 != $id32
 `)
-    
+
 getMo()
   .then((res) => {
     return res.json()
