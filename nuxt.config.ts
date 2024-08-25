@@ -18,7 +18,10 @@ export default defineNuxtConfig({
     database:{
       db: {
         connector: 'sqlite',
-        options: { name: 'dbfile' }
+        options: { 
+          name: 'dbfile',
+          path: '.data/dbfile.sqlite3'
+        }
       }
     }
   }
