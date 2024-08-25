@@ -1,7 +1,7 @@
 export default defineNitroPlugin(() => {
 
   try {
-  const db = useDatabase('db')
+  const db = useDatabase()
   
   const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
   
