@@ -3,7 +3,6 @@
 .data
 .nuxt
 .nitro
-.vercel
 .cache
 dist
 

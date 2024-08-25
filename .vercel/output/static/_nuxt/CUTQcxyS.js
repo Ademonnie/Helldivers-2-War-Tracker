@@ -1,0 +1,1 @@
+import{n as s,o as n,c as t,a as o,t as a}from"./iurotYuZ.js";const c=s({__name:"defenseTask",props:{task:{}},setup(p){return(e,l)=>(n(),t("div",null,[o("p",null,"( "+a(e.task.valueTypes[1])+" / "+a(e.task.values[1])+" ) planets defended",1)]))}});export{c as default};
