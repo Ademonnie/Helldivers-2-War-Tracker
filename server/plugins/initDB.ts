@@ -11,7 +11,8 @@ export default defineNitroPlugin(() => {
       brief STRING,
       description STRING,
       tasks STRING,
-      progress STRING
+      progress STRING,
+      isActive INTEGER
   )
   
   `)
