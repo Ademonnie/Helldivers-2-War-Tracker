@@ -5,6 +5,7 @@
 html {
   background-color: #1F1F23;
   overscroll-behavior: none;
+  padding-bottom: 200px;
 }
 
 body {

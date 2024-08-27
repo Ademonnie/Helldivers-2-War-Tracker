@@ -31,7 +31,7 @@ export default defineNitroPlugin(() => {
       defense INTEGER,
       majorOrder INTEGER,
       biome TEXT,
-      expireDateTime INTEGER
+      expireDateTime NUMERIC
   )
   
   `

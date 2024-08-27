@@ -15,11 +15,11 @@ declare global {
     players: number,
     health: number,
     maxHealth: number,
-    percentage: number,
+    percentage: string,
     majorOrder: number,
     defense: number,
     biome: string,
-    expireDateTime: number,
+    expiredatetime: number,
   }
 
   interface InactivePlanet {

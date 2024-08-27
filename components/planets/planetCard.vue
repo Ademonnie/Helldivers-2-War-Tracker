@@ -3,11 +3,11 @@
     <div class="planet-name">
       <h3>{{ planet?.name || "Unknown planet" }}</h3>
     </div>
-    <Progressbar class="attack-progress-bar" :class="{'defense-progress-bar': isDefense}" :progress="planet?.percentage" :faction="planet?.faction"></Progressbar>
+    <Progressbar class="attack-progress-bar" :class="{'defense-progress-bar': isDefense}" :progress="Number(planet?.percentage)" :faction="planet?.faction"></Progressbar>
     <Progressbar v-if="isDefense" class="defense-progress-bar" :progress="enemyProgress" :faction="planet?.faction"></Progressbar>
 
     
-    <p><strong>{{ Math.trunc(planet?.percentage) || 0 }}%</strong> {{ isDefense ? 'DEFENDED' : 'LIBERATED'}}</p>
+    <p><strong>{{ Math.trunc(Number(planet?.percentage)) || 0 }}%</strong> {{ isDefense ? 'DEFENDED' : 'LIBERATED'}}</p>
     <div class="planet-info">
       <p class="biome">Biome: {{ biome?.slug || 'Unknown'}}</p>
       <p class="players">{{ planet?.players || 0 }} active Helldivers</p>
@@ -22,12 +22,12 @@
   }>()
 
   const enemyProgress = computed<number>(() => {
-    if (props.planet.expireDateTime) {
-      const date = props.planet.expireDateTime || 0
+    if (props.planet.expiredatetime) {
+      const date = props.planet.expiredatetime || 0
       const startDate = new Date(date * 1000 - (24 * 60 * 60 * 1000)).getTime()
       const currentDate = new Date().getTime() - startDate
       const endDate = date * 1000 - startDate
-  
+
       return Math.min((100 * currentDate) / endDate , 100)
 
     } else {
