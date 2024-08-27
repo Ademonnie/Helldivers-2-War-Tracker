@@ -9,10 +9,10 @@ export default defineNitroPlugin(() => {
   (
       id32 INTEGER PRIMARY KEY,
       expiresIn INTEGER,
-      brief STRING,
-      description STRING,
-      tasks STRING,
-      progress STRING,
+      brief TEXT,
+      description TEXT,
+      tasks TEXT,
+      progress TEXT,
       isActive INTEGER
   )
   
@@ -22,16 +22,16 @@ export default defineNitroPlugin(() => {
   
   (
       planetIndex INTEGER PRIMARY KEY,
-      name STRING,
-      faction STRING,
+      name TEXT,
+      faction TEXT,
       players INTEGER,
       health INTEGER,
       maxHealth INTEGER,
-      percentage NUMBER,
+      percentage NUMERIC,
       defense INTEGER,
       majorOrder INTEGER,
-      biome STRING,
-      expireDateTime NUMBER
+      biome TEXT,
+      expireDateTime INTEGER
   )
   
   `
@@ -40,14 +40,14 @@ export default defineNitroPlugin(() => {
   
   (
       id INTEGER PRIMARY KEY,
-      name STRING,
-      biome STRING,
-      environmentals STRING,
-      owner STRING
+      name TEXT,
+      biome TEXT,
+      environmentals TEXT,
+      owner TEXT
   )
   
   `
-  
+
   } catch (e) {
     console.error(e, " Failed to initialise database")
   }
