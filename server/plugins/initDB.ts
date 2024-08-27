@@ -1,9 +1,10 @@
+import { sql } from "@vercel/postgres"
+
 export default defineNitroPlugin(() => {
 
   try {
-  const db = useDatabase('db')
   
-  const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
+  sql`CREATE TABLE IF NOT EXISTS orders
   
   (
       id32 INTEGER PRIMARY KEY,
@@ -15,9 +16,9 @@ export default defineNitroPlugin(() => {
       isActive INTEGER
   )
   
-  `)
+  `
   
-  const initActivePlanets = db.prepare(`CREATE TABLE IF NOT EXISTS activePlanets
+  sql`CREATE TABLE IF NOT EXISTS activePlanets
   
   (
       planetIndex INTEGER PRIMARY KEY,
@@ -33,9 +34,9 @@ export default defineNitroPlugin(() => {
       expireDateTime NUMBER
   )
   
-  `)
+  `
   
-  const initPlanets = db.prepare(`CREATE TABLE IF NOT EXISTS planets
+  sql`CREATE TABLE IF NOT EXISTS planets
   
   (
       id INTEGER PRIMARY KEY,
@@ -45,12 +46,8 @@ export default defineNitroPlugin(() => {
       owner STRING
   )
   
-  `)
+  `
   
-  initOrders.run()
-  initActivePlanets.run()
-  initPlanets.run()
-
   } catch (e) {
     console.error(e, " Failed to initialise database")
   }
