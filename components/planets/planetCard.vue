@@ -23,12 +23,16 @@
 
   const enemyProgress = computed<number>(() => {
     if (props.planet.expiredatetime) {
+
+      const currentDate = new Date().getTime()
+      const daysToCapture = Math.ceil((props.planet.expiredatetime * 1000 - currentDate) / (24 * 60 * 60 * 1000))
+
       const date = props.planet.expiredatetime || 0
-      const startDate = new Date(date * 1000 - (24 * 60 * 60 * 1000)).getTime()
-      const currentDate = new Date().getTime() - startDate
+      const startDate = date * 1000 - daysToCapture * (24 * 60 * 60 * 1000)
+      const currentTime = new Date().getTime() - startDate
       const endDate = date * 1000 - startDate
 
-      return Math.min((100 * currentDate) / endDate , 100)
+      return Math.min((100 * currentTime) / endDate , 100)
 
     } else {
       return 0

@@ -1,12 +1,23 @@
-export default function (type: number): string {
+export default function (faction: number, type: number): string {
   let targetName = ''
 
-  switch (type) {
-    case 0:
-      targetName = 'Terminids'
+  switch (faction) {
+    case 1:
+      switch (type) {
+        case 2514244534:
+          targetName = 'Bile Titans'
+          break
+        default:
+          targetName = 'Terminids'
+      }
       break
-    case 2514244534:
-      targetName = 'Bile Titans'
+
+    case 0: 
+      targetName = 'Automatons'
+      break
+
+    default:
+      targetName = 'Targets'
   }
 
   return targetName

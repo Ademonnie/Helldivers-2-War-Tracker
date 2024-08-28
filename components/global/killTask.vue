@@ -17,7 +17,7 @@
 
   
   targetAmount.value = new Intl.NumberFormat('fr-FR').format(props.task.values[2] || 0)
-  targetName.value = getTargetName(props.task.values[3])
+  targetName.value = getTargetName(props.task.values[1], props.task.values[3])
   
   const taskProgress = computed<number>(() => {
     return (100 * props.progress / props.task.values[2])

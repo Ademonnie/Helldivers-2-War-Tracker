@@ -37,7 +37,7 @@ declare global {
 
   interface Order {
     id32: number,
-    expiresIn: number,
+    expiresin: number,
     brief: string,
     description: string,
     tasks: string,

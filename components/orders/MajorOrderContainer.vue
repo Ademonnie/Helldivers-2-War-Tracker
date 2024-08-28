@@ -22,7 +22,7 @@ const tasks = ref<Task[]>([])
 const taskStatus = ref<boolean[]>([])
 const timeRemaining = ref('')
 
-timeRemaining.value = getRemainingTime(props.order.expiresIn)
+timeRemaining.value = getRemainingTime(props.order.expiresin)
 
 tasks.value = JSON.parse(props.order.tasks)
 tasks.value.forEach((task, index) => {

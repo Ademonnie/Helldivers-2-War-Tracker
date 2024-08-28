@@ -50,7 +50,6 @@ export default defineTask({
           ${biome},
           ${planet.expireDateTime}
         )`
-        console.log('planet updated')
       })
 
       } catch (e) {
