@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header title="Galactic war status" :routes="routes"></Header>
-    <MobileCardContainer :planets="planets"></MobileCardContainer>
-    <DesktopCardContainer :planets="planets"></DesktopCardContainer>
+    <MobileCardContainer class="card-container" :planets="planets"></MobileCardContainer>
+    <DesktopCardContainer class="card-container" :planets="planets"></DesktopCardContainer>
   </div>
 </template>
 
@@ -25,23 +25,11 @@ planets.value = await $fetch('/api/getActivePlanets')
 
 <style scoped>
 
-.nav-container {
-  position: absolute;
-  top: 20px;
-  right: 50px;
-}
-
-.header {
-  position: sticky;
-  top: 0;
-  background-color: #1F1F23;
-  z-index: 1;
-}
-
-.title-container {
-
-  padding-bottom: 50px;
-  
+.card-container {
+  margin-bottom: 151px;
+  @media (max-width: 800px) {
+    margin-bottom: 81px;
+  }
 }
 
 </style>

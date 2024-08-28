@@ -40,6 +40,7 @@ taskData.value = getTaskData(props.task.type)
     background-color: #131313;
     height: 1.5em;
     width: 1.5em;
+    min-width: 1.5em;
     border: .1rem solid #F1F1F1;
     transform: translateY(.9rem);
     display: grid;
