@@ -22,7 +22,8 @@ export default defineNuxtConfig({
       }
     },
     scheduledTasks: {
-      '*/20 * * * *': ['db:populateActivePlanets', 'db:populateMo']
+      '*/20 * * * *': ['db:populateActivePlanets', 'db:populateMo'],
+      '0 * * * *': ['db:updatePlanetOwners']
     }
   }
 })
