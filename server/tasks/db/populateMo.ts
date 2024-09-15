@@ -51,6 +51,8 @@ export default defineTask({
         await sql`UPDATE orders SET isActive = 0 WHERE id32 != ${order.id32}`
       }) 
 
+      console.log('Updated MO!')
+
       return { result: 'success'}
     } catch (e) {
       console.error(e)

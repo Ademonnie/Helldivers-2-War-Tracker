@@ -52,6 +52,8 @@ export default defineTask({
         )`
       })
 
+      console.log("Planets updated!")
+
       } catch (e) {
         console.error(e)
       }
