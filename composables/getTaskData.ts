@@ -22,6 +22,10 @@ export default function (type: number): {description: string, component: string 
       data.description = 'Hold control of the following planet:',
       data.component = 'LiberateTask'
       break
+    case 15:
+      data.description = 'Liberate more planets than are lost during the order duration'
+      data.component = 'AdvanceTask'
+      break
   }
 
   return data
