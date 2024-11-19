@@ -20,6 +20,8 @@ const orders = ref<Order[]>([])
 
 orders.value = await $fetch('/api/getMo')
 
+console.log(orders.value)
+
 </script>
 
 <style scoped>

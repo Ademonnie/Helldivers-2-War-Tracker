@@ -5,9 +5,9 @@ const db = new Database('./.data/dbfile.sqlite3')
 const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
   
   (
-    id32 INTEGER PRIMARY KEY,
-    expiresIn INTEGER,
-    isActive INTEGER,
+    id32 NUMBER PRIMARY KEY,
+    expiresIn NUMBER,
+    isActive NUMBER,
     brief STRING,
     description STRING,
     tasks STRING,
@@ -19,15 +19,15 @@ const initOrders = db.prepare(`CREATE TABLE IF NOT EXISTS orders
 const initActivePlanets = db.prepare(`CREATE TABLE IF NOT EXISTS activePlanets
   
   (
-    planetIndex INTEGER PRIMARY KEY,
+    planetIndex NUMBER PRIMARY KEY,
     name STRING,
     faction STRING,
-    players INTEGER,
-    health INTEGER,
-    maxHealth INTEGER,
+    players NUMBER,
+    health NUMBER,
+    maxHealth NUMBER,
     percentage NUMBER,
-    defense INTEGER,
-    majorOrder INTEGER,
+    defense NUMBER,
+    majorOrder NUMBER,
     biome STRING,
     expireDateTime NUMBER
   )
@@ -37,7 +37,7 @@ const initActivePlanets = db.prepare(`CREATE TABLE IF NOT EXISTS activePlanets
 const initPlanets = db.prepare(`CREATE TABLE IF NOT EXISTS planets
   
   (
-    id INTEGER PRIMARY KEY,
+    id NUMBER PRIMARY KEY,
     name STRING,
     biome STRING,
     environmentals STRING,

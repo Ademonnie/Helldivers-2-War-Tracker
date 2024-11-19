@@ -1,11 +1,12 @@
-import { sql } from "@vercel/postgres"
-
 export default defineTask({
   meta: {
     name: 'db:populatePlanets',
     description: 'Update general planets data'
   },
   async run() {
+
+    const db = useDatabase('db')
+
     try {
 
       const getPlanetData = async () => {
@@ -21,7 +22,7 @@ export default defineTask({
         const environmentals = JSON.stringify(planets[el]?.environmentals)
         const name = planets[el]?.name
 
-        await sql`INSERT INTO planets
+        await db.sql`INSERT INTO planets
           (
             id,
             name,

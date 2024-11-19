@@ -1,49 +1,49 @@
-import { sql } from "@vercel/postgres"
-
 export default defineNitroPlugin(() => {
+
+  const db = useDatabase('db')
 
   try {
   
-    sql`CREATE TABLE IF NOT EXISTS orders
+    db.sql`CREATE TABLE IF NOT EXISTS orders
     
     (
         id32 BIGINT PRIMARY KEY,
-        expiresIn INTEGER,
-        brief TEXT,
-        description TEXT,
-        tasks TEXT,
-        progress TEXT,
-        isActive INTEGER
+        expiresIn NUMBER,
+        brief STRING,
+        description STRING,
+        tasks STRING,
+        progress STRING,
+        isActive NUMBER
     )
     
     `
     
-    sql`CREATE TABLE IF NOT EXISTS activePlanets
+   db.sql`CREATE TABLE IF NOT EXISTS activePlanets
     
     (
-        planetIndex INTEGER PRIMARY KEY,
-        name TEXT,
-        faction TEXT,
-        players INTEGER,
-        health INTEGER,
-        maxHealth INTEGER,
-        percentage NUMERIC,
-        defense INTEGER,
-        majorOrder INTEGER,
-        biome TEXT,
-        expireDateTime NUMERIC
+        planetIndex NUMBER PRIMARY KEY,
+        name STRING,
+        faction STRING,
+        players NUMBER,
+        health NUMBER,
+        maxHealth NUMBER,
+        percentage NUMBER,
+        defense NUMBER,
+        majorOrder NUMBER,
+        biome STRING,
+        expireDateTime NUMBER
     )
     
     `
     
-    sql`CREATE TABLE IF NOT EXISTS planets
+    db.sql`CREATE TABLE IF NOT EXISTS planets
     
     (
-        id INTEGER PRIMARY KEY,
-        name TEXT,
-        biome TEXT,
-        environmentals TEXT,
-        owner TEXT
+        id NUMBER PRIMARY KEY,
+        name STRING,
+        biome STRING,
+        environmentals STRING,
+        owner STRING
     )
     
     `

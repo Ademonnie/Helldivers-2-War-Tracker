@@ -1,11 +1,12 @@
-import { sql } from "@vercel/postgres"
-
 export default defineTask({
   meta: {
     name: "db:populateMo",
     description: "Update the active Major Order"
   },
   async run() {
+
+    const db = useDatabase('db')
+
     try {
       const getMoData = async () => {
         const response = await fetch('https://helldiverstrainingmanual.com/api/v1/war/major-orders')
@@ -22,7 +23,7 @@ export default defineTask({
         const tasks = JSON.stringify(order.setting.tasks)
         const progress = JSON.stringify(order.progress)
 
-        await sql`INSERT INTO orders 
+        await db.sql`INSERT INTO orders 
           (
             id32,
             expiresIn,
@@ -48,7 +49,7 @@ export default defineTask({
           ON CONFLICT(id32) DO UPDATE SET expiresIn = ${order.expiresIn}, progress = ${progress}
         `
 
-        await sql`UPDATE orders SET isActive = 0 WHERE id32 != ${order.id32}`
+        await db.sql`UPDATE orders SET isActive = 0 WHERE id32 != ${order.id32}`
       }) 
 
       console.log('Updated MO!')

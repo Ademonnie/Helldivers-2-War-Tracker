@@ -1,11 +1,12 @@
-import { sql } from "@vercel/postgres"
-
 export default defineTask({
   meta: {
     name: 'db:updatePlanetOwners',
     description: 'Update the current owner of planets'
   },
   async run() {
+
+    const db = useDatabase('db')
+
     try {
       const getPlanetOwner = async () => {
         const response = await fetch('https://helldiverstrainingmanual.com/api/v1/war/status')
@@ -28,7 +29,7 @@ export default defineTask({
             owner = 'Super-Earth'
         }
 
-        await sql`UPDATE planets SET owner = ${owner} WHERE id = ${item.index}`
+        await db.sql`UPDATE planets SET owner = ${owner} WHERE id = ${item.index}`
       })
 
       return { result: 'success'}

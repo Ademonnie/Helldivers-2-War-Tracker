@@ -1,11 +1,11 @@
-import { sql } from "@vercel/postgres"
-
 export default defineTask({
   meta: {
     name: "db:populateActivePlanets",
     description: "Update the currently active planets"
   },
   async run() {
+
+    const db = useDatabase('db')
     try {
       const getPlanetData = async () => {
         const response = await fetch('https://helldiverstrainingmanual.com/api/v1/war/campaign')
@@ -13,7 +13,7 @@ export default defineTask({
         return await response.json()    
       }
 
-      await sql`DELETE FROM activePlanets`
+      await db.sql`DELETE FROM activePlanets`
 
       const data = await getPlanetData()
 
@@ -22,7 +22,7 @@ export default defineTask({
         const majorOrder = planet.majorOrder ? 1 : 0
         const defense = planet.defense ? 1 : 0
 
-        await sql`INSERT INTO activePlanets 
+        await db.sql`INSERT INTO activePlanets 
         (
           planetIndex,
           name,
@@ -53,10 +53,11 @@ export default defineTask({
       })
 
       console.log("Planets updated!")
+      return { result: 'success' }
 
       } catch (e) {
         console.error(e)
+        return { result: 'failure' }
       }
-      return { result: 'success' }
     }
 })

@@ -1,10 +1,10 @@
-export default defineTask({
+export default  defineTask({
   meta: {
     name:'test',
     description: 'a test task'
   },
   run() {
-    console.log('test task')
+    console.warn('test task')
 
     return { result: 'success' }
   }
