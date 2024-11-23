@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@vercel/postgres": "^0.9.0",
+    "@vercel/functions": "1.5.0",
     "better-sqlite3": "^9.6.0",
     "nuxt": "^3.12.4",
     "vue": "latest"
