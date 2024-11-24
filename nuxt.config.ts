@@ -20,11 +20,6 @@ export default defineNuxtConfig({
         connector: 'sqlite',
         options: { name: 'dbfile' }
       }
-    },
-    scheduledTasks: {
-      // '*/20 * * * *': ['db:populateActivePlanets', 'db:populateMo'],
-      // '0 * * * *': ['db:updatePlanetOwners'],
-      // '* * * * *': ['test']
     }
   }
 })
