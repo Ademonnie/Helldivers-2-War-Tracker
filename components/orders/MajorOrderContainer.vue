@@ -40,7 +40,7 @@ tasks.value.forEach((task, index) => {
     border: 1px solid #F1F1F1;
     padding: 20px;
 
-    @media(max-width: 800px) {
+    @media(max-width: 1200px) {
       width: 90%;
       min-width: 200px;
       border: none;

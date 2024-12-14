@@ -1,12 +1,14 @@
 <template>
   <div class="mobile-card-container">
-    <div class="faction-selector" :class="{terminids: selectedFaction === 'Terminids'}">
+    <div class="faction-selector" :class="{terminids: selectedFaction === 'Terminids', illuminates: selectedFaction === 'Illuminates'}">
       <p class="automaton-selector" :class="{selected: selectedFaction === 'Automatons'}" @click="setSelectedFaction('Automatons')">Automatons</p>
       <p class="terminid-selector" :class="{selected: selectedFaction === 'Terminids'}" @click="setSelectedFaction('Terminids')">Terminids</p>
+      <p class="illuminate-selector" :class="{slected: selectedFaction === 'Illuminates'}" @click="setSelectedFaction('Illuminates')">Illuminates</p>
     </div>
     <div class="card-list-container">
       <PlanetCard class="planet-card" v-show="selectedFaction === 'Automatons'" v-for="planet in automatonPlanets" :planet="planet"/>
       <PlanetCard class="planet-card" v-show="selectedFaction === 'Terminids'" v-for="planet in terminidPlanets" :planet="planet"/>
+      <PlanetCard class="planet-card" v-show="selectedFaction === 'Illuminates'" v-for="planet in illuminatePlanets" :planet="planet"/>
     </div>
   </div>
 </template>
@@ -20,11 +22,13 @@ const props = defineProps<{
 
 const terminidPlanets = ref<Planet[]>([])
 const automatonPlanets = ref<Planet[]>([])
+const illuminatePlanets = ref<Planet[]>([])
 
 const selectedFaction = ref<string>('Automatons')
 
 terminidPlanets.value = props.planets?.filter(p => p.faction === 'Terminids') || []
 automatonPlanets.value = props.planets?.filter(p => p.faction === 'Automatons') || []
+illuminatePlanets.value = props.planets?.filter(p => p.faction === 'Illuminates') || []
 
 const setSelectedFaction = (faction: string) => {
   selectedFaction.value = faction
@@ -39,7 +43,7 @@ const setSelectedFaction = (faction: string) => {
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 801px) {
+    @media (min-width: 1201px) {
       display: none;
     }
   }
@@ -66,6 +70,10 @@ const setSelectedFaction = (faction: string) => {
   .faction-selector.terminids:after {
     left: 145px;
     
+  }
+
+  .faction-selector.illuminates:after {
+    left: 287px;
   }
 
   .faction-selector > p {

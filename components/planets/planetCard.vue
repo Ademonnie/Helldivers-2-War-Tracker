@@ -1,5 +1,5 @@
 <template>
-  <div class="planet-card-container" :class="{terminid: terminid, automaton: automaton}">
+  <div class="planet-card-container" :class="{terminid: terminid, automaton: automaton, illuminate: illuminate}">
     <div class="planet-name">
       <h3>{{ planet?.name || "Unknown planet" }}</h3>
     </div>
@@ -41,11 +41,13 @@
 
   const terminid = ref<Boolean>(false)
   const automaton = ref<Boolean>(false)
+  const illuminate = ref<Boolean>(false)
   const isDefense :boolean = props.planet?.defense === 1 
   const biome :Biome = await JSON.parse(props.planet?.biome)
 
   terminid.value = props.planet?.faction === 'Terminids'
   automaton.value = props.planet?.faction === 'Automatons'
+  illuminate.value = props.planet?.faction === 'Illuminates'
 </script>
 
 <style scoped>
@@ -71,11 +73,16 @@
     --highlight-color: 253, 98, 100;
   }
 
-  @media (min-width: 800px) {
+  .planet-card-container.illuminate {
+    --highlight-color: 172, 71, 254; 
+  }
+
+  @media (min-width: 1200px) {
     .planet-card-container:hover {
       box-shadow: 0 0 10px 5px rgba(var(--highlight-color), 0.4);
       transform: translate(-3px, -3px);
     }
+
     .planet-card-container::before {
       content: "";
       position: absolute;

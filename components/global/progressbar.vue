@@ -1,5 +1,5 @@
 <template>
-  <div class="bar" :class="{terminid: terminid, automaton: automaton}">
+  <div class="bar" :class="{terminid: terminid, automaton: automaton, illuminate: illuminate}">
     <div class="progress" :style="{width: progress + '%'}"></div>
   </div>
 </template>
@@ -12,9 +12,11 @@
 
   const terminid = ref<Boolean>(false)
   const automaton = ref<Boolean>(false)
+  const illuminate = ref<Boolean>(false)
 
   terminid.value = props.faction === 'Terminids'
   automaton.value = props.faction === 'Automatons'
+  illuminate.value = props.faction === 'Illuminates'
 
 </script>
 
@@ -34,6 +36,10 @@
 
   .bar.automaton {
     --highlight-color: 253, 98, 100;
+  }
+
+  .bar.illuminate {
+    --highlight-color: 172, 71, 254;
   }
 
   .progress {

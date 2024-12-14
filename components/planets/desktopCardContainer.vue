@@ -8,6 +8,10 @@
       <p>Terminid controlled</p>
       <PlanetCard class="planet-card" v-for="planet in terminidPlanets" :planet="planet"></PlanetCard>
     </div>
+    <div class="card-list">
+      <p>Illuminate controlled</p>
+      <PlanetCard class="planet-card" v-for="planet in illuminatePlanets" :planet="planet"></PlanetCard>
+    </div>
   </div>
 </template>
 
@@ -20,9 +24,11 @@ const props = defineProps<{
 
 const terminidPlanets = ref<Planet[]>([])
 const automatonPlanets = ref<Planet[]>([])
+const illuminatePlanets = ref<Planet[]>([])
 
 terminidPlanets.value = props.planets?.filter(p => p.faction === 'Terminids') || []
 automatonPlanets.value = props.planets?.filter(p => p.faction === 'Automatons') || []
+illuminatePlanets.value = props.planets?.filter(p => p.faction === 'Illuminates') || []
 
 </script>
 
@@ -32,13 +38,13 @@ automatonPlanets.value = props.planets?.filter(p => p.faction === 'Automatons') 
     display: flex;
     justify-content: center;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1200px) {
       display: none;
     }
   }
 
   .card-list {
-    width: 30%;
+    width: 20%;
     min-width: 350px;
     max-width: 600px;
     margin: 0 30px;

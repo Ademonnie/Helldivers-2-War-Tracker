@@ -35,7 +35,7 @@ const biome: Biome = await JSON.parse(props.planet?.biome)
     transition: all 300ms ease-in-out;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1200px) {
     .planet-card-container:hover {
       box-shadow: 0 0 10px 5px rgba(var(--highlight-color), 0.4);
       transform: translate(-3px, -3px);

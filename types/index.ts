@@ -2,7 +2,8 @@ export { }
 
 const planeName = {
   TERMINID: 'Terminids',
-  AUTOMATON: 'Automatons'
+  AUTOMATON: 'Automatons',
+  ILLUMINATE: 'Illuminates'
 } as const
 
 type ValueOf<Obj> = Obj[keyof Obj];

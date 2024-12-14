@@ -27,7 +27,7 @@ planets.value = await $fetch('/api/getActivePlanets')
 
 .card-container {
   margin-bottom: 151px;
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     margin-bottom: 81px;
   }
 }

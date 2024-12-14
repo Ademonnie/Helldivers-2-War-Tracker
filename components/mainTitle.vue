@@ -55,7 +55,7 @@
     font-size: 1.3rem;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
 
     .container {
       width: 0;
