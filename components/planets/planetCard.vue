@@ -77,34 +77,6 @@
     --highlight-color: 172, 71, 254; 
   }
 
-  @media (min-width: 1200px) {
-    .planet-card-container:hover {
-      box-shadow: 0 0 10px 5px rgba(var(--highlight-color), 0.4);
-      transform: translate(-3px, -3px);
-    }
-
-    .planet-card-container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(200, 200, 200, 0.15),
-        transparent
-      );
-    }
-    
-    .planet-card-container:hover:before {
-      transition: all 650ms;
-      left: 100%;
-    }
-
-  }
-
 
   .attack-progress-bar {
     margin: 0 10px 30px;
@@ -142,6 +114,34 @@
   .biome {
     
     text-align: left;
+  }
+
+  @media (min-width: 1200px) {
+    .planet-card-container:hover {
+      box-shadow: 0 0 10px 5px rgba(var(--highlight-color), 0.4);
+      transform: translate(-3px, -3px);
+    }
+
+    .planet-card-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(200, 200, 200, 0.15),
+        transparent
+      );
+    }
+    
+    .planet-card-container:hover:before {
+      transition: all 650ms;
+      left: 100%;
+    }
+
   }
 
 </style>

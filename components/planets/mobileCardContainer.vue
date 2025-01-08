@@ -42,10 +42,6 @@ const setSelectedFaction = (faction: string) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @media (min-width: 1201px) {
-      display: none;
-    }
   }
 
   .faction-selector {
@@ -90,8 +86,16 @@ const setSelectedFaction = (faction: string) => {
     cursor: pointer;
   }
 
+  .card-list-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .planet-card {
     margin-bottom: 20px;
+    width: 100%;
   }
 
   @media (max-width: 1200px) {
@@ -108,13 +112,19 @@ const setSelectedFaction = (faction: string) => {
     }
 
     .faction-selector.terminids:after {
-    left: 125px;
+      left: 125px;
     
+    }
+
+    .faction-selector.illuminates:after {
+      left: 245px;
+    }
   }
 
-  .faction-selector.illuminates:after {
-    left: 245px;
-  }
+  @media (min-width: 1001px) {
+    .mobile-card-container {
+      display: none;
+    }
   }
 
 </style>

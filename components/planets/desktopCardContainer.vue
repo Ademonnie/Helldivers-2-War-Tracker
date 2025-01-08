@@ -37,10 +37,6 @@ illuminatePlanets.value = props.planets?.filter(p => p.faction === 'Illuminates'
   .desktop-card-container {
     display: flex;
     justify-content: center;
-
-    @media (max-width: 1200px) {
-      display: none;
-    }
   }
 
   .card-list {
@@ -58,6 +54,18 @@ illuminatePlanets.value = props.planets?.filter(p => p.faction === 'Illuminates'
     font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
+  }
+
+  @media (max-width: 1000px) {
+    .desktop-card-container {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .card-list {
+      margin: 0 10px;
+    }
   }
 
 </style>
