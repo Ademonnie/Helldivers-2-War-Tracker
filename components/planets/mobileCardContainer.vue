@@ -94,4 +94,27 @@ const setSelectedFaction = (faction: string) => {
     margin-bottom: 20px;
   }
 
+  @media (max-width: 1200px) {
+    .faction-selector:after {
+      width: 110px;
+    }
+
+    .faction-selector > p {
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .faction-selector.terminids:after {
+    left: 125px;
+    
+  }
+
+  .faction-selector.illuminates:after {
+    left: 245px;
+  }
+  }
+
 </style>

@@ -15,6 +15,10 @@ export default defineTask({
 
       const orders = await getMoData()
 
+      if (orders.length === 0) {
+        await sql`UPDATE orders SET isActive = 0 WHERE isActive = 1`
+      }
+
       orders.forEach(async (order) => {
         const brief = order.setting.overrideBrief
         const description = order.setting.taskDescription
