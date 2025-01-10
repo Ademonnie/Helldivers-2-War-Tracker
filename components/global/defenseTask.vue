@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>( {{ task.valueTypes[1] }} / {{ task.values[1] }} ) planets defended</p>
+    <p>( {{ task.values[2] }} / {{ task.values[0] }} ) planets defended</p>
   </div>
 </template>
 
