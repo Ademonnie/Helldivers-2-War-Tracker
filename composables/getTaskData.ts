@@ -15,7 +15,7 @@ export default function (type: number): {description: string, component: string 
       data.component = 'LiberateTask'
       break
     case 12:
-      data.description = 'Succesfully defend the follwing number of planets:'
+      data.description = 'Succesfully defend the following number of planets:'
       data.component = 'DefenseTask'
       break
     case 13:
