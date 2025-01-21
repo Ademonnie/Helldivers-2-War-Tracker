@@ -42,7 +42,7 @@
   const terminid = ref<Boolean>(false)
   const automaton = ref<Boolean>(false)
   const illuminate = ref<Boolean>(false)
-  const isDefense :boolean = props.planet?.defense === 1 
+  const isDefense :boolean = !!props.planet?.expiredatetime
   const biome :Biome = await JSON.parse(props.planet?.biome)
 
   terminid.value = props.planet?.faction === 'Terminids'
