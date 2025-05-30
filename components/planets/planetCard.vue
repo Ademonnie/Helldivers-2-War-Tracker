@@ -1,5 +1,6 @@
 <template>
   <div class="planet-card-container" :class="{terminid: terminid, automaton: automaton, illuminate: illuminate}">
+    <BiomeImage class="planet-image" :biomeName="biome?.slug || 'unknown'" ></BiomeImage>
     <div class="planet-name">
       <h3>{{ planet?.name || "Unknown planet" }}</h3>
     </div>
@@ -16,6 +17,8 @@
 </template>
 
 <script setup lang="ts">
+import BiomeImage from './biomeImage.vue';
+
 
   const props = defineProps<{
     planet: Planet
@@ -63,6 +66,7 @@
     border: 1px solid rgb(var(--highlight-color));
     color: rgb(var(--highlight-color));
     transition: all 300ms ease-in-out;
+    z-index: 0;
   }
 
   .planet-card-container.terminid {
@@ -84,6 +88,29 @@
 
   .defense-progress-bar {
     margin: 0 10px;
+  }
+
+  .planet-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 62%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .planet-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, transparent, transparent, rgb(0,0,0));
   }
 
   .planet-name {

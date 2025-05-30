@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+
   app: {
     head: {
       charset: 'utf8',
@@ -10,6 +11,7 @@ export default defineNuxtConfig({
       title: 'HD2 War Status'
     }
   },
+
   nitro: {
     experimental: {
       database: true,
@@ -21,5 +23,7 @@ export default defineNuxtConfig({
         options: { name: 'dbfile' }
       }
     }
-  }
+  },
+
+  modules: ['@nuxt/image']
 })
